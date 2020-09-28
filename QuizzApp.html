@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="QuizzApp.css">
+  <title>Quizz App</title>
+</head>
+
+<body>
+  <div id="main" class="main-menu">
+    <div class="module">
+      <h1>Welcome to Quizz App</h1>
+      <p>You have 5s to answer each questions.</p>
+      <p>For each question gets the <span id="indicator_1">right </span>answer, you get <span id="indicator_2">1
+          point</span></p>
+
+      <button id="start-btn">Start Quiz</button>
+
+    </div>
+  </div>
+
+  <div id="container" class="container hide">
+    <div class="question">
+      <div class="header">
+        <h2 id="question-number"></h2>
+        <h2 id="timer">Time : <span id="ticking">5</span>s</h2>
+      </div>
+
+      <div class="content ">
+        <h3 id="question-content"></h3>
+        <div id="option-container">
+        </div>
+      </div>
+
+      <div class="navbar">
+        <button id="next-btn">Next</button>
+        <div class="status">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="results" class="results hide">
+    <div class="results-container">
+      <h1>Result</h1>
+      <div class="results-box">
+        <p>Total</p>
+        <p>5</p>
+
+        <p>Attempt</p>
+        <p><span id="attempt-answers"></span></p>
+
+        <p>Right answer(s)</p>
+        <p><span id="right-answers"></span></p>
+
+        <p>Wrong answer(s)</p>
+        <p><span id="wrong-answers"></span></p>
+
+        <p>Final score :</p>
+        <p></span></span> <span id="final-score"></span>/5</p>
+      </div>
+      <button id="try-again">Try Again</button>
+    </div>
+  </div>
+  </div>
+
+  <script src="QuizzApp.js"></script>
+</body>
+
+</html>

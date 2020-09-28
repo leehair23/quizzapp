@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Merriweather', serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:url(bg.jpg) no-repeat;
+  background-size: cover;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.hide{
+  display: none;
+}
+
+/* Main menu */
+.main-menu{
+  width: 800px;
+  padding: 5px;
+  background: linear-gradient(to right, red, purple);
+  border-radius: 10px;
+}
+
+.module{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+#indicator_1{
+  color: rgb(48, 245, 48);
+}
+
+#indicator_2{
+  color: aqua;
+}
+
+.module > h1{
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+
+.module > p{
+  margin: 5px 0 5px 0;
+}
+
+#start-btn{
+  padding: 20px;
+  margin-top: 30px;
+  min-width: 200px;
+  border: none;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 18px;
+  background: linear-gradient(to right, red 0%, purple 100%);
+}
+
+#start-btn:focus{
+  cursor: pointer;
+  outline: none;
+}
+
+
+/* Container */
+.container{
+  width: 800px;
+  padding: 5px;
+  background: linear-gradient(to right, red, purple);
+  border-radius: 10px;
+  min-height: 400px;
+}
+
+.question{
+  background: #000;
+  color: #fff;
+  padding: 20px;
+  min-height: 390px;
+  border-radius: 10px;
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 2px solid white;
+}
+
+.content{
+  margin: 7px;
+}
+
+#option-container > .option{
+  margin: 10px;
+  border: 2px solid white;
+  padding: 10px 10px 10px 20px;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.navbar{
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+#next-btn{
+  padding: 10px;
+  min-width: 100px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #000;
+  border: 2px solid #fff;
+  font-size: 15px;
+  height: inherit;
+}
+
+.status{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-right: 10px;
+}
+
+.status > div{
+  border: 4px solid #fff;
+  width: 40px;
+  margin-right: 5px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.right{
+  background-color:rgb(48, 245, 48);
+}
+
+.wrong{
+  background-color: red;
+}
+
+.disabled{
+  pointer-events: none;
+}
+
+/* Result board */
+.results{
+  width: 800px;
+  padding: 5px;
+  background: linear-gradient(to right, red, purple);
+  border-radius: 10px;
+  min-height: 400px;
+}
+
+.results-container{
+  background: #000;
+  color: #fff;
+  padding: 20px;
+  min-height: 390px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.results-box{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 20px;
+}
+
+.results-box > p:nth-child(even){
+  margin-left: 80%;
+}
+
+#try-again{
+  padding: 20px;
+  margin-top: 30px;
+  min-width: 200px;
+  border: none;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 18px;
+  background: linear-gradient(to right, red 0%, purple 100%);
+}
+
+#try-again:focus{
+  outline: none;
+  cursor: pointer;
+}
