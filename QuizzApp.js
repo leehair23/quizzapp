@@ -175,9 +175,11 @@ function disableOptions() {
 // Lưu các kết quả và hiển thị qua DOM
 function showAnswerStatusToDOM() {
 	const totalQuestion = quizzes.length;
+	statusContainer.innerHTML = '';
 	for (let i = 0; i < totalQuestion; i++) {
 		const status = document.createElement('div');
 		statusContainer.appendChild(status);
+		console.log(statusContainer.children.length);
 	}
 }
 
@@ -201,6 +203,32 @@ function startTimer(duration, display) {
 	}, 1000);
 }
 
+// Try again
+function tryAgain() {
+	results.classList.add('hide');
+	mainMenu.classList.remove('hide');
+	resetGame();
+}
+
+// Reset laị game sau khi ấn nút Try Again
+function resetGame() {
+	questionCounter = 0;
+	attempt = 0;
+	score = 0;
+}
+
+// Start game
+function startGame() {
+	// Trước hết, set tất cả questions trong availableQuestions array
+	setQuestion();
+
+	// Sau đó, gọi getQuestions()
+	getContentsToDOM();
+
+	// Show tính trạng hiện tại của các câu trả lời
+	showAnswerStatusToDOM();
+}
+
 // Game over, hiện ra bảng result và thử lại(nếu muốn)
 function gameOver() {
 	// Show bảng Result
@@ -210,26 +238,12 @@ function gameOver() {
 	attempts.innerText = `${attempt}`;
 }
 
-// Event :
-// Phần này là dành cho các event sau khi có các hoạt động khác đã xảy ra như click chuột vào
-// 1 button hoặc load trang web đó.
-
-window.onload = function () {
-	// Trước hết, set tất cả questions trong availableQuestions array
-	setQuestion();
-
-	// Sau đó, gọi getQuestions()
-	getContentsToDOM();
-
-	// Show tính trạng hiện tại của các câu trả lời
-	showAnswerStatusToDOM();
-};
-
-// Listener :
+// Events & Listeners :
 // Phần này là dành cho các button khi đc click thì sẽ nghe theo event click đó
 startBtn.addEventListener('click', function () {
 	container.classList.remove('hide');
 	mainMenu.classList.add('hide');
+	startGame();
 });
 
 next.addEventListener('click', function () {
@@ -240,9 +254,4 @@ next.addEventListener('click', function () {
 	} else {
 		getContentsToDOM();
 	}
-});
-
-tryAgainBtn.addEventListener('click', function () {
-	results.classList.add('hide');
-	mainMenu.classList.remove('hide');
 });
